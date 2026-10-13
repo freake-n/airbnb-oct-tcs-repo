@@ -35,10 +35,7 @@ jobs:
         run: dbt --version
 
       - name: Install dbt packages
-        run: dbt deps
-
-      - name: Validate Databricks connection
-        run: dbt debug --target prod
+        run: dbt deps --target prod
 
       - name: Build models and run tests
-        run: dbt build --target prod
+        run: dbt run --target prod

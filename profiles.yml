@@ -1,0 +1,20 @@
+deploy_dbt_airbnb:
+  target: prod
+  outputs:
+    dev:
+      type: databricks
+      host: dbc-e476557d-848c.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/0c24ed0dc23a2d88
+      token: dapic4dc84b106bd1668f7e7a9f1130c9f97
+      catalog: airbnb2
+      schema: dev
+      threads: 4
+
+    prod:
+      type: databricks
+      host: dbc-e476557d-848c.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/0c24ed0dc23a2d88
+      token: dapic4dc84b106bd1668f7e7a9f1130c9f97
+      catalog: airbnb2
+      schema: prod
+      threads: 4
